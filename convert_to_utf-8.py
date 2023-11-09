@@ -10,7 +10,7 @@ def convert_to_utf8_bom(file_path):
 
     # 文字コードが既にUTF-8 BOMの場合はスキップ
     if encoding != 'utf-8':
-        # ファイルの内容をデコードし、UTF-8 BOM付きでエンコード
+        # ファイルの内容をデコードし、UTF-8 でエンコード
         try:
             decoded_data = raw_data.decode(encoding)
             encoded_data = codecs.BOM_UTF8 + decoded_data.encode('utf-8')
