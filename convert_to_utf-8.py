@@ -2,7 +2,7 @@
 import chardet # pip install chardetが必要
 import codecs
 
-def convert_to_utf8_bom(file_path):
+def convert_to_utf8(file_path):
     # ファイルをバイナリモードで読み込み、文字コードを検出
     with open(file_path, 'rb') as f:
         raw_data = f.read()
@@ -37,7 +37,7 @@ def main():
             # ファイルのフルパスを取得
             file_path = os.path.join(root, file)
             # UTF-8に変換
-            convert_to_utf8_bom(file_path)
+            convert_to_utf8(file_path)
 
 if __name__ == '__main__':
     main()
