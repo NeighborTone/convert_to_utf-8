@@ -1,5 +1,16 @@
-﻿import os
-import chardet # pip install chardetが必要
+import os
+import subprocess
+import sys
+
+# 必要なパッケージを確認し、インストールする
+required_packages = ["chardet"]
+for package in required_packages:
+    try:
+        __import__(package)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+import chardet # ここで改めてインポート
 import codecs
 
 def convert_to_utf8(file_path):
